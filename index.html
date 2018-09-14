@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- SEO -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>ITNTI - Digital Company</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <!-- Navbar -->
+        <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="#">ITNTI</a>
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Approach</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">EN</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="#">EN</a>
+                                <a class="dropdown-item" href="#">NP</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero -->
+        <div id="heroBg" class="hero-section">
+            <div class="hero-section-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="hero-section-content">
+                                <h1>Lead Your company on the path to success</h1>
+                                <p>Websites,online stores, Email Services and Branding</p>
+                                <a href="#" class="btn-custom-primary">Contact us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main id="main">
+        <!-- SectionA -->
+        <section id="sectionA" class="worked-section">
+            <div class="container">
+                <h4>we worked for</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, ad!</p>
+                <!-- carousel -->
+                <div class="owl-carousel" id="owl-one">
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/img/logo/cni_logo.png" alt="cni.com.np">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/img/logo/berger-paints-logo.png" alt="cni.com.np">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/img/logo/cni_logo.png" alt="cni.com.np">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/bootstrap/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/bootstrap/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/owl/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
