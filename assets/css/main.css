@@ -4,14 +4,15 @@
  2. Header Styles
  3. Main Styles
   3.1 Worked Sections
+  3.2 Why Sections
+  3.3 Project Sections
 =============================================*/
 /*=============================================
 =            1. Global Styles            =
 =============================================*/
 @font-face {
-  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format(tff);
   font-family: "Montserrat";
-  font-display: fallback;
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format(tff);
 }
 
 body,
@@ -21,14 +22,17 @@ html {
   font-size: 16px;
 }
 
+* {
+  font-family: "Montserrat";
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-shadow: border-box;
-          box-shadow: border-box;
-  font-family: "Montserrat";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
@@ -39,6 +43,42 @@ a,
 a:hover,
 a:focus {
   text-decoration: none;
+}
+
+.btn-custom-success {
+  padding: 0.8rem 1rem;
+  background: #37d592;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transition: opacity 0.5 ease-in-out;
+  transition: opacity 0.5 ease-in-out;
+}
+
+.btn-custom-success:hover {
+  opacity: 0.8;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-custom-primary {
+  padding: 0.8rem 1rem;
+  background: #05a9f4;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transition: opacity 0.5 ease-in-out;
+  transition: opacity 0.5 ease-in-out;
+}
+
+.btn-custom-primary:hover {
+  opacity: 0.8;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
 }
 
 /* =====  End of 1. Global Styles  ====== */
@@ -53,19 +93,267 @@ a:focus {
   background-color: #f2f3f6;
 }
 
-/* =====  End of 2. Header Styles  ====== */
-/*=============================================
-=            3.1 Worked Section            =
-=============================================*/
-.worked-section {
-  padding: 4rem 0;
-}
-
-.worked-section h4 {
+#header .navbar-custom ul li a.nav-link {
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 1.4;
 }
 
-/*=====  End of 3.1 Worked Section  ======*/
+#header .hero-section {
+  display: block;
+  margin-top: 5rem;
+}
+
+#header .hero-section .hero-section-content h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  color: #14203c;
+}
+
+#header .hero-section .hero-section-content p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* =====  End of 2. Header Styles  ====== */
+/* =============================================
+=            3.1 Worked Section            =
+============================================= */
+.worked-section {
+  display: block;
+  padding: 1.8rem 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+}
+
+.worked-section p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #ddd;
+}
+
+.worked-section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: url("../img/curved.svg");
+  background-position: bottom center;
+  background-size: cover;
+  content: "";
+  z-index: 5;
+}
+
+.worked-section a img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-filter: grayscale(0.8);
+          filter: grayscale(0.8);
+}
+
+/* =====  End of 3.1 Worked Section  ====== */
+/* =============================================
+=            3.2 Why Sections            =
+============================================= */
+.why-section {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.why-section .why-section-content {
+  text-align: center;
+  max-width: 65%;
+  margin: auto;
+}
+
+.why-section .why-section-content h3 {
+  font-size: 0.875rem;
+  color: #05a9f4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.why-section .why-section-content h1 {
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #14203c;
+}
+
+.why-section .why-section-item .item-info {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.why-section .why-section-item .item-info i {
+  color: #37d592;
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.why-section .why-section-item .item-info span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.why-section .why-section-item p {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.why-section .why-section-link {
+  margin-top: 5rem;
+}
+
+.why-section hr {
+  margin-top: 5rem;
+}
+
+/* =====  End of 3.2 Why Sections  ====== */
+/*=============================================
+=            3.3 Project Section            =
+=============================================*/
+.project-section {
+  background-color: #f2f3f6;
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.project-section .project-section-content {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.project-section .project-section-content h3 {
+  font-size: 0.875rem;
+  color: #05a9f4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.project-section .project-section-content h1 {
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #14203c;
+}
+
+.project-section .project-section-link {
+  margin-top: 5rem;
+}
+
+.project-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.project-section .card-img-overlay {
+  z-index: 2;
+}
+
+.project-section .card-link a {
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/*=====  End of 3.3 project Section  ======*/
+/*=============================================
+=            3.5 startegy Section            =
+=============================================*/
+.startegy-section {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+  background: #f2f3f6;
+}
+
+.startegy-section .startegy-section-title {
+  max-width: 60%;
+  margin: auto;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.startegy-section .startegy-section-title h3 {
+  font-size: 0.875rem;
+  color: #05a9f4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.startegy-section .startegy-section-title h1 {
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #14203c;
+}
+
+.startegy-section .startegy-section-item {
+  margin-top: 5rem;
+}
+
+.startegy-section .startegy-section-item i {
+  color: #37d592;
+  font-size: 2rem;
+}
+
+.startegy-section .startegy-section-item .startegy-section-item-content {
+  padding: 1.2rem;
+}
+
+.startegy-section .startegy-section-item .startegy-section-item-content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.startegy-section .startegy-section-item .startegy-section-item-content p {
+  font-size: 1rem;
+  word-break: break-all;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.brb {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+
+.br {
+  border-right: 1px solid #ccc;
+}
+
+/*=====  End of 3.4 startegy Section  ======*/
 /*# sourceMappingURL=main.css.map */

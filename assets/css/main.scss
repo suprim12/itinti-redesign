@@ -4,80 +4,355 @@
  2. Header Styles
  3. Main Styles
   3.1 Worked Sections
+  3.2 Why Sections
+  3.3 Project Sections
 =============================================*/
 
 /*=============================================
 =            1. Global Styles            =
 =============================================*/
 @font-face {
-    src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format(tff);
-    font-family: "Montserrat";
-    font-display: fallback;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format(tff);
 }
 
 $font: "Montserrat";
+$bgcolor :#fff;
 $colors: (title-textcolor: #14203c,
-paragraph-textcolor: #69707a,
+textcolor: #69707a,
+subtitle-textcolor: #9bb0bf,
 herobg: #f2f3f6,
 success: #37d592,
 primary: #05a9f4);
 
 @function color($colorsname) {
-    @return map-get($colors, $colorsname);
+  @return map-get($colors, $colorsname);
+}
+
+@function set-text-color($bgcolor) {
+  @if (lightness($bgcolor)>40) {
+    @return #000;
+  }
+
+  @else {
+    @return #fff;
+  }
+}
+
+@mixin section-styles {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+}
+
+@mixin section-content-styles {
+  h3 {
+    font-size: 0.875rem;
+    color: color(primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.375rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: color(title-textcolor);
+  }
 }
 
 body,
 html {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+* {
+  font-family: $font;
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-shadow: border-box;
-    font-family: $font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 a,
 a:hover,
 a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
+
+// Buttons
+.btn-custom-success {
+  padding: 0.8rem 1rem;
+  background: color(success);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5 ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.btn-custom-primary {
+  padding: 0.8rem 1rem;
+  background: color(primary);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5 ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+
 
 /* =====  End of 1. Global Styles  ====== */
 /* =============================================
 =            2. Header Styles            =
 ============================================= */
 #header {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: color(herobg); // Navbar Section
+
+  .navbar-custom ul li a.nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  // Hero Section
+  .hero-section {
     display: block;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: color(herobg);
+    margin-top: 5rem;
+
+    .hero-section-content {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+        color: color(title-textcolor);
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
 
 /* =====  End of 2. Header Styles  ====== */
-
-/*=============================================
+/* =============================================
 =            3.1 Worked Section            =
-=============================================*/
+============================================= */
 .worked-section {
-    padding: 4rem 0;
+  display: block;
+  padding: 1.8rem 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.5);
 
-    & h4 {
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: 1.4;
-    }
+  & p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #ddd;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/curved.svg");
+    background-position: bottom center;
+    background-size: cover;
+    content: "";
+    z-index: 5;
+  }
+
+  & a img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(0.8);
+  }
 }
 
+/* =====  End of 3.1 Worked Section  ====== */
+/* =============================================
+=            3.2 Why Sections            =
+============================================= */
+.why-section {
+  @include section-styles();
 
-/*=====  End of 3.1 Worked Section  ======*/
+  .why-section-content {
+    text-align: center;
+    max-width: 65%;
+    margin: auto;
+    @include section-content-styles();
+
+  }
+
+  .why-section-item {
+    .item-info {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+
+      & i {
+        color: color(success);
+        font-size: 2rem;
+        margin-right: 2rem;
+      }
+
+      & span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+
+    & p {
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .why-section-link {
+    margin-top: 5rem;
+  }
+
+  & hr {
+    margin-top: 5rem
+  }
+}
+
+/* =====  End of 3.2 Why Sections  ====== */
+
+/*=============================================
+=            3.3 Project Section            =
+=============================================*/
+.project-section {
+  background-color: color(herobg);
+  @include section-styles();
+
+  .project-section-content {
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+    @include section-content-styles();
+  }
+
+  .project-section-link {
+    margin-top: 5rem;
+  }
+
+  // Card Overlay
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .card-img-overlay {
+    z-index: 2;
+  }
+
+  .card-link a {
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+/*=====  End of 3.3 project Section  ======*/
+
+/*=============================================
+=            3.5 startegy Section            =
+=============================================*/
+.startegy-section {
+  @include section-styles();
+  background: color(herobg);
+
+  .startegy-section-title {
+    max-width: 60%;
+    margin: auto;
+    margin-bottom: 5rem;
+    text-align: center;
+    @include section-content-styles();
+  }
+
+  .startegy-section-item {
+    margin-top: 5rem;
+
+    & i {
+      color: color(success);
+      font-size: 2rem;
+    }
+
+    .startegy-section-item-content {
+      padding: 1.2rem;
+
+      & h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: set-text-color($bgcolor);
+      }
+
+      & p {
+        font-size: 1rem;
+        word-break: break-all;
+        margin-top: 0.8rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.brb {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+
+.br {
+  border-right: 1px solid #ccc;
+}
+
+/*=====  End of 3.4 startegy Section  ======*/
