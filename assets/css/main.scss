@@ -6,6 +6,9 @@
   3.1 Worked Sections
   3.2 Why Sections
   3.3 Project Sections
+  3.4
+  3.5
+  3.6 Call Sections
 =============================================*/
 
 /*=============================================
@@ -93,7 +96,7 @@ a:focus {
 
 // Buttons
 .btn-custom-success {
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1.875rem;
   background: color(success);
   color: #fff;
   border-radius: 5px;
@@ -109,7 +112,7 @@ a:focus {
 }
 
 .btn-custom-primary {
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1.875rem;
   background: color(primary);
   color: #fff;
   border-radius: 5px;
@@ -198,7 +201,9 @@ a:focus {
   }
 
   & a img {
-    width: 60px;
+    // Overrrides Owl Class
+    width: 50% !important;
+    margin: 0 auto;
     height: 60px;
     object-fit: contain;
     filter: grayscale(0.8);
@@ -229,10 +234,10 @@ a:focus {
       & i {
         color: color(success);
         font-size: 2rem;
-        margin-right: 2rem;
       }
 
       & span {
+        margin-left: 2rem;
         font-size: 1.2rem;
         font-weight: 600;
         text-transform: capitalize;
@@ -260,7 +265,7 @@ a:focus {
 =            3.3 Project Section            =
 =============================================*/
 .project-section {
-  background-color: color(herobg);
+  background: color(herobg);
   @include section-styles();
 
   .project-section-content {
@@ -276,26 +281,205 @@ a:focus {
     margin-top: 5rem;
   }
 
-  // Card Overlay
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+  .owl-stage-outer {
+    padding: 2rem 0;
   }
 
-  .card-img-overlay {
-    z-index: 2;
+  .owl-item.active.center {
+    .project-section-item-wrapp {
+      .front {
+        &::after {
+          visibility: hidden;
+        }
+
+        & .inner {
+          visibility: hidden;
+        }
+      }
+
+      &:hover .back {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        & a {
+          opacity: 1;
+          left: 0;
+        }
+      }
+
+      &:hover .front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+    }
   }
 
-  .card-link a {
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #fff;
+  .project-section-item-wrapp {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    .front,
+    .back {
+      background-size: cover;
+      background-position: center;
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      backface-visibility: hidden;
+      text-align: center;
+      min-height: 380px;
+      height: auto;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgb(206, 220, 231);
+      // background: #14203c;
+
+      & .inner {
+        & p {
+          font-size: 1rem;
+          font-weight: 600;
+          text-align: left;
+          opacity: 0.8;
+        }
+
+        & a {
+          font-size: 0.875rem;
+          font-weight: 600;
+          border-radius: 50px;
+          padding: 0.5rem 1.2rem;
+          box-shadow: none;
+          position: relative;
+          opacity: 0;
+          left: -100%;
+          transition: all 0.5s linear;
+        }
+
+        & img {
+          width: 50%;
+          object-fit: contain;
+          object-position: center;
+          height: 40px;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .inner {
+      transform: translateY(-50%) translateZ(60px);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      perspective: inherit;
+      z-index: 2;
+    }
+
+    & .front {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        opacity: .5;
+        background-color: #000;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px;
+      }
+
+      .front-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top left;
+          border-radius: 5px;
+        }
+      }
+
+      & .inner p {
+        color: #fff;
+        opacity: 0.8;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      & .inner p:after {
+        content: '';
+        width: 4rem;
+        height: 1px;
+        position: absolute;
+        background: color(success);
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -.75rem;
+      }
+
+      & .inner span {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Montserrat';
+        font-weight: 300;
+      }
+    }
+
+    & .back {
+      transform: rotateY(180deg);
+      transform-style: preserve-3d;
+    }
+
+    // &:hover .back {
+    //   -webkit-transform: rotateY(0deg);
+    //   transform: rotateY(0deg);
+    //   -webkit-transform-style: preserve-3d;
+    //   transform-style: preserve-3d;
+
+    //   & a {
+    //     opacity: 1;
+    //     left: 0;
+    //   }
+    // }
+
+    // &:hover .front {
+    //   -webkit-transform: rotateY(-180deg);
+    //   transform: rotateY(-180deg);
+    //   -webkit-transform-style: preserve-3d;
+    //   transform-style: preserve-3d;
+    // }
   }
+
 }
 
 /*=====  End of 3.3 project Section  ======*/
@@ -305,7 +489,7 @@ a:focus {
 =============================================*/
 .startegy-section {
   @include section-styles();
-  background: color(herobg);
+  // background: color(herobg);
 
   .startegy-section-title {
     max-width: 60%;
@@ -356,3 +540,95 @@ a:focus {
 }
 
 /*=====  End of 3.4 startegy Section  ======*/
+
+/*=============================================
+=            3.5 Achive Section            =
+=============================================*/
+.achive-section {
+  @include section-styles();
+  background: linear-gradient(to right, #934BFF, #934BFF);
+
+  .achive-section-content {
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h3 {
+      font-size: 0.875rem;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.375rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+  }
+
+  .achive-section-item {
+    padding: 0 2rem;
+    border-right: 1px dotted color(success);
+
+    &.no-b-r {
+      border-right: none;
+    }
+
+    & span {
+      color: color(success);
+      font-weight: 600;
+      font-size: 2rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    & h3 {
+      font-size: 0.875rem;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+/*=====  End of 3.5 Achive Section  ======*/
+
+/*=============================================
+=            3.6 Call Section            =
+=============================================*/
+.call-section {
+  @include section-styles();
+
+  .call-section-bg {
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(21deg, #17B1F4 0%, #3FC2F2 100%);
+
+    .call-section-content {
+      color: #fff;
+
+      & h1 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      & p {
+        opacity: 0.8;
+        font-size: 500;
+      }
+    }
+  }
+}
+
+
+/*=====  End of 3.6 Call Section  ======*/

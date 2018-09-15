@@ -6,6 +6,9 @@
   3.1 Worked Sections
   3.2 Why Sections
   3.3 Project Sections
+  3.4
+  3.5
+  3.6 Call Sections
 =============================================*/
 /*=============================================
 =            1. Global Styles            =
@@ -46,7 +49,7 @@ a:focus {
 }
 
 .btn-custom-success {
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1.875rem;
   background: #37d592;
   color: #fff;
   border-radius: 5px;
@@ -64,7 +67,7 @@ a:focus {
 }
 
 .btn-custom-primary {
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1.875rem;
   background: #05a9f4;
   color: #fff;
   border-radius: 5px;
@@ -151,7 +154,8 @@ a:focus {
 }
 
 .worked-section a img {
-  width: 60px;
+  width: 50% !important;
+  margin: 0 auto;
   height: 60px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -203,10 +207,10 @@ a:focus {
 .why-section .why-section-item .item-info i {
   color: #37d592;
   font-size: 2rem;
-  margin-right: 2rem;
 }
 
 .why-section .why-section-item .item-info span {
+  margin-left: 2rem;
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: capitalize;
@@ -230,7 +234,7 @@ a:focus {
 =            3.3 Project Section            =
 =============================================*/
 .project-section {
-  background-color: #f2f3f6;
+  background: #f2f3f6;
   display: block;
   width: 100%;
   padding: 8rem 0;
@@ -263,24 +267,189 @@ a:focus {
   margin-top: 5rem;
 }
 
-.project-section .overlay {
+.project-section .owl-stage-outer {
+  padding: 2rem 0;
+}
+
+.project-section .owl-item.active.center .project-section-item-wrapp .front::after {
+  visibility: hidden;
+}
+
+.project-section .owl-item.active.center .project-section-item-wrapp .front .inner {
+  visibility: hidden;
+}
+
+.project-section .owl-item.active.center .project-section-item-wrapp:hover .back {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.project-section .owl-item.active.center .project-section-item-wrapp:hover .back a {
+  opacity: 1;
+  left: 0;
+}
+
+.project-section .owl-item.active.center .project-section-item-wrapp:hover .front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.project-section .project-section-item-wrapp {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.project-section .project-section-item-wrapp .front,
+.project-section .project-section-item-wrapp .back {
+  background-size: cover;
+  background-position: center;
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  text-align: center;
+  min-height: 380px;
+  height: auto;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.project-section .project-section-item-wrapp .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #cedce7;
+}
+
+.project-section .project-section-item-wrapp .back .inner p {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  opacity: 0.8;
+}
+
+.project-section .project-section-item-wrapp .back .inner a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.5rem 1.2rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  opacity: 0;
+  left: -100%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.project-section .project-section-item-wrapp .back .inner img {
+  width: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.project-section .project-section-item-wrapp .inner {
+  -webkit-transform: translateY(-50%) translateZ(60px);
+          transform: translateY(-50%) translateZ(60px);
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  -webkit-perspective: inherit;
+          perspective: inherit;
+  z-index: 2;
+}
+
+.project-section .project-section-item-wrapp .front {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.project-section .project-section-item-wrapp .front:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  opacity: .5;
+  background-color: #000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.project-section .project-section-item-wrapp .front .front-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
 }
 
-.project-section .card-img-overlay {
-  z-index: 2;
+.project-section .project-section-item-wrapp .front .front-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top left;
+     object-position: top left;
+  border-radius: 5px;
 }
 
-.project-section .card-link a {
-  letter-spacing: 1px;
-  font-weight: 600;
+.project-section .project-section-item-wrapp .front .inner p {
   color: #fff;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.project-section .project-section-item-wrapp .front .inner p:after {
+  content: '';
+  width: 4rem;
+  height: 1px;
+  position: absolute;
+  background: #37d592;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+}
+
+.project-section .project-section-item-wrapp .front .inner span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+.project-section .project-section-item-wrapp .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 /*=====  End of 3.3 project Section  ======*/
@@ -291,7 +460,6 @@ a:focus {
   display: block;
   width: 100%;
   padding: 8rem 0;
-  background: #f2f3f6;
 }
 
 .startegy-section .startegy-section-title {
@@ -356,4 +524,98 @@ a:focus {
 }
 
 /*=====  End of 3.4 startegy Section  ======*/
+/*=============================================
+=            3.5 Achive Section            =
+=============================================*/
+.achive-section {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+  background: -webkit-gradient(linear, left top, right top, from(#934BFF), to(#934BFF));
+  background: linear-gradient(to right, #934BFF, #934BFF);
+}
+
+.achive-section .achive-section-content {
+  max-width: 70%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.achive-section .achive-section-content h3 {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.achive-section .achive-section-content h1 {
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.achive-section .achive-section-content p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.achive-section .achive-section-item {
+  padding: 0 2rem;
+  border-right: 1px dotted #37d592;
+}
+
+.achive-section .achive-section-item.no-b-r {
+  border-right: none;
+}
+
+.achive-section .achive-section-item span {
+  color: #37d592;
+  font-weight: 600;
+  font-size: 2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.achive-section .achive-section-item h3 {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/*=====  End of 3.5 Achive Section  ======*/
+/*=============================================
+=            3.6 Call Section            =
+=============================================*/
+.call-section {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.call-section .call-section-bg {
+  padding: 3rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(21deg, #17B1F4 0%, #3FC2F2 100%);
+}
+
+.call-section .call-section-bg .call-section-content {
+  color: #fff;
+}
+
+.call-section .call-section-bg .call-section-content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.call-section .call-section-bg .call-section-content p {
+  opacity: 0.8;
+  font-size: 500;
+}
+
+/*=====  End of 3.6 Call Section  ======*/
 /*# sourceMappingURL=main.css.map */
