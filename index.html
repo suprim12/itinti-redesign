@@ -330,7 +330,7 @@
                     </div>
                 </div>
                 <p class="text-center project-section-link">
-                    <a href="" class="btn-custom-primary">View more</a>
+                    <a href="" class="btn-custom-success">View more</a>
                 </p>
             </div>
         </section>
@@ -462,7 +462,36 @@
             <div class="testi-section-wrapper">
                 <div class="container">
                     <div class="testi-section-content">
+                        <h3>Client testimonial </h3>
                         <h1>More than 200 companies trusted us already.</h1>
+                    </div>
+                    <div class="owl-carousel" id="owl-three">
+                        <div class="item">
+                            <div class="testi-section-item">
+                                <div class="testi-section-item-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, commodi
+                                        officiis cum veritatis dignissimos tempore.</p>
+                                    <span>CEO</span>
+                                </div>
+                                <div class="testi-section-item-img">
+                                    <img src="assets/img/sliders/slider-1.jpg" alt="person">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testi-section-item">
+                                <div class="testi-section-item-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, commodi
+                                        officiis cum veritatis dignissimos tempore. Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit. Neque praesentium incidunt perferendis maiores
+                                        nesciunt. Itaque magni autem laboriosam sint nemo!</p>
+                                    <span>CEO</span>
+                                </div>
+                                <div class="testi-section-item-img">
+                                    <img src="assets/img/sliders/slider-1.jpg" alt="person">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -534,6 +563,12 @@
                     items: 4
                 }
             }
+        });
+        $('.owl-carousel#owl-three').owlCarousel({
+            items: 1,
+            loop: false,
+            nav: true,
+            center: false,
         });
     </script>
 </body>

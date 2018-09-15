@@ -9,6 +9,7 @@
   3.4
   3.5
   3.6 Call Sections
+  3.7 Testimonial Section
 =============================================*/
 
 /*=============================================
@@ -632,3 +633,80 @@ a:focus {
 
 
 /*=====  End of 3.6 Call Section  ======*/
+
+/*=============================================
+=            3.7 Testimonial Section            =
+=============================================*/
+.testi-section {
+  @include section-styles();
+
+  .owl-stage-outer {
+    padding: 6rem 0;
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+      position: relative;
+      z-index: 1;
+      background: color(success) !important;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: #fff !important;
+      box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+    }
+
+  }
+
+  .testi-section-content {
+    max-width: 50%;
+    @include section-content-styles();
+  }
+
+  .testi-section-item {
+    background: #f2f2f2;
+    padding: 2rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 70%;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+
+    .testi-section-item-content {
+      padding-bottom: 2rem;
+    }
+
+    .testi-section-item-img {
+      position: absolute;
+      bottom: -16%;
+      z-index: 2;
+
+      & img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+
+
+/*=====  End of 3.7 Testimonial Section  ======*/

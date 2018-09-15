@@ -9,6 +9,7 @@
   3.4
   3.5
   3.6 Call Sections
+  3.7 Testimonial Section
 =============================================*/
 /*=============================================
 =            1. Global Styles            =
@@ -618,4 +619,101 @@ a:focus {
 }
 
 /*=====  End of 3.6 Call Section  ======*/
+/*=============================================
+=            3.7 Testimonial Section            =
+=============================================*/
+.testi-section {
+  display: block;
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.testi-section .owl-stage-outer {
+  padding: 6rem 0;
+}
+
+.testi-section .owl-nav {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.testi-section .owl-nav button {
+  position: relative;
+  z-index: 1;
+  background: #37d592 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff !important;
+  -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.testi-section .owl-nav button:hover, .testi-section .owl-nav button:focus {
+  outline: none;
+}
+
+.testi-section .testi-section-content {
+  max-width: 50%;
+}
+
+.testi-section .testi-section-content h3 {
+  font-size: 0.875rem;
+  color: #05a9f4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.testi-section .testi-section-content h1 {
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #14203c;
+}
+
+.testi-section .testi-section-item {
+  background: #f2f2f2;
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 70%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.testi-section .testi-section-item .testi-section-item-content {
+  padding-bottom: 2rem;
+}
+
+.testi-section .testi-section-item .testi-section-item-img {
+  position: absolute;
+  bottom: -16%;
+  z-index: 2;
+}
+
+.testi-section .testi-section-item .testi-section-item-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/*=====  End of 3.7 Testimonial Section  ======*/
 /*# sourceMappingURL=main.css.map */
