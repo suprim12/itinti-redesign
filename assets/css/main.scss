@@ -607,7 +607,7 @@ a:focus {
 =            3.6 Call Section            =
 =============================================*/
 .call-section {
-  @include section-styles();
+  padding: 4rem 0;
 
   .call-section-bg {
     padding: 3rem;
@@ -647,8 +647,9 @@ a:focus {
   .owl-nav {
     position: absolute;
     top: 50%;
+    right: 0;
     transform: translateY(-50%);
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -661,6 +662,10 @@ a:focus {
       border-radius: 50%;
       color: #fff !important;
       box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+
+      &.disabled {
+        display: none;
+      }
 
       &:hover,
       &:focus {
@@ -677,6 +682,7 @@ a:focus {
 
   .testi-section-item {
     background: #f2f2f2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 5px;
     margin: 0 auto;
@@ -689,20 +695,45 @@ a:focus {
     width: 100%;
 
     .testi-section-item-content {
-      padding-bottom: 2rem;
+
+      & span.quote {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #ddd;
+      }
+
+      & p {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.4;
+        font-weight: 600;
+        color: color(title-textcolor);
+        opacity: 0.5;
+        font-style: italic;
+      }
+
+
     }
 
-    .testi-section-item-img {
-      position: absolute;
-      bottom: -16%;
-      z-index: 2;
+    .testi-author-info {
+      & span i {
+        color: gold;
+        font-size: 0.75rem;
+      }
 
-      & img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center;
+      & p {
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+      }
+
+      & span {
+        font-size: 0.875rem;
+        color: color(success);
+        text-transform: capitalize;
+        font-weight: 600;
       }
     }
   }
@@ -710,3 +741,85 @@ a:focus {
 
 
 /*=====  End of 3.7 Testimonial Section  ======*/
+
+/*=============================================
+=            Footer            =
+=============================================*/
+.footer-section {
+  padding: 4rem 0;
+
+  .footer-about {
+
+    & img {
+      width: 60%;
+      object-fit: contain;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-align: justify;
+      line-height: 1.4;
+      padding-right: 3rem;
+      color: #69707a;
+
+    }
+  }
+
+  .footer-location {
+    p {
+      font-size: 0.875rem;
+      color: #69707a;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      color: #69707a;
+      font-size: 0.875rem;
+      font-weight: 600;
+
+      &:first-child {
+        color: color(success);
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+
+  ul li {
+    margin-bottom: 0.875rem;
+    transition: all .5s ease-in-out;
+
+    & a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #69707a;
+    }
+
+    &:hover {
+      transform: translateX(10px);
+
+      & a {
+        color: color(success);
+      }
+    }
+  }
+
+  p.copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: color(title-textcolor);
+    opacity: 0.5;
+    letter-spacing: 0.0125rem;
+  }
+}
+
+/*=====  End of Footer  ======*/

@@ -591,9 +591,7 @@ a:focus {
 =            3.6 Call Section            =
 =============================================*/
 .call-section {
-  display: block;
-  width: 100%;
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 .call-section .call-section-bg {
@@ -635,9 +633,9 @@ a:focus {
 .testi-section .owl-nav {
   position: absolute;
   top: 50%;
+  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -656,6 +654,10 @@ a:focus {
   color: #fff !important;
   -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.testi-section .owl-nav button.disabled {
+  display: none;
 }
 
 .testi-section .owl-nav button:hover, .testi-section .owl-nav button:focus {
@@ -683,6 +685,8 @@ a:focus {
 
 .testi-section .testi-section-item {
   background: #f2f2f2;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   border-radius: 5px;
   margin: 0 auto;
@@ -695,25 +699,118 @@ a:focus {
   width: 100%;
 }
 
-.testi-section .testi-section-item .testi-section-item-content {
-  padding-bottom: 2rem;
+.testi-section .testi-section-item .testi-section-item-content span.quote {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ddd;
 }
 
-.testi-section .testi-section-item .testi-section-item-img {
-  position: absolute;
-  bottom: -16%;
-  z-index: 2;
+.testi-section .testi-section-item .testi-section-item-content p {
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #14203c;
+  opacity: 0.5;
+  font-style: italic;
 }
 
-.testi-section .testi-section-item .testi-section-item-img img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+.testi-section .testi-section-item .testi-author-info span i {
+  color: gold;
+  font-size: 0.75rem;
+}
+
+.testi-section .testi-section-item .testi-author-info p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.testi-section .testi-section-item .testi-author-info span {
+  font-size: 0.875rem;
+  color: #37d592;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 /*=====  End of 3.7 Testimonial Section  ======*/
+/*=============================================
+=            Footer            =
+=============================================*/
+.footer-section {
+  padding: 4rem 0;
+}
+
+.footer-section .footer-about img {
+  width: 60%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+.footer-section .footer-about p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 1.4;
+  padding-right: 3rem;
+  color: #69707a;
+}
+
+.footer-section .footer-location p {
+  font-size: 0.875rem;
+  color: #69707a;
+  margin-bottom: 1rem;
+}
+
+.footer-section .footer-location span {
+  color: #69707a;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.footer-section .footer-location span:first-child {
+  color: #37d592;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.875rem;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.footer-section ul li a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #69707a;
+}
+
+.footer-section ul li:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.footer-section ul li:hover a {
+  color: #37d592;
+}
+
+.footer-section p.copyright {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #14203c;
+  opacity: 0.5;
+  letter-spacing: 0.0125rem;
+}
+
+/*=====  End of Footer  ======*/
 /*# sourceMappingURL=main.css.map */
