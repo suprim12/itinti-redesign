@@ -15,8 +15,8 @@
 =            1. Global Styles            =
 =============================================*/
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format(tff);
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 body,
@@ -769,6 +769,20 @@ a:focus {
   color: #69707a;
   font-size: 0.875rem;
   font-weight: 600;
+  padding: 0.75rem 0;
+}
+
+.footer-section .footer-location span.mail {
+  color: #37d592;
+}
+
+.footer-section .footer-location span.mail i {
+  margin-right: 1rem;
+}
+
+.footer-section .footer-location span.phone i {
+  color: #37d592;
+  margin-right: 1rem;
 }
 
 .footer-section .footer-location span:first-child {
