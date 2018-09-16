@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!-- CSS -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="assets/owl/assets/owl.carousel.min.css">
@@ -48,7 +47,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">EN</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-custom-lan" aria-labelledby="dropdownId">
                                 <a class="dropdown-item" href="#">EN</a>
                                 <a class="dropdown-item" href="#">NP</a>
                             </div>
@@ -336,15 +335,13 @@
                 </p>
             </div>
         </section>
-
         <!-- SectionE - Strategy Section -->
         <section id="sectionD" class="startegy-section">
-
             <div class="startegy-section-wrapper">
                 <div class="container">
                     <div class="startegy-section-title">
                         <h3>startegy Company ?</h3>
-                        <h1>Buil from the ground up for the mobile generation.</h1>
+                        <h1>Built from the ground up for the mobile generation.</h1>
                         <p>Company is a digital-first insurer, using technology to make Life Insurance simpler, smarter
                             and
                             more rewarding.</p>
@@ -459,14 +456,13 @@
                 </div>
             </div>
         </section>
-
         <!-- Testimonial Section -->
         <section id="sectionF" class="testi-section">
             <div class="testi-section-wrapper">
                 <div class="container">
                     <div class="testi-section-content">
                         <h3>Client testimonial </h3>
-                        <h1>what our other clients often say.</h1>
+                        <h1>What our other clients often say.</h1>
                     </div>
                     <div class="owl-carousel" id="owl-three">
                         <div class="item">
@@ -545,43 +541,49 @@
     <footer id="footer" class="footer-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 d-flex justify-content-spacearound">
                     <div class="footer-about">
                         <img src="assets/img/logo/logo.jpg" alt="ITNTI">
-                        <p><strong></strong>ITNTI</strong> was started in 2000 by young entrepreneurs simply with their
+                        <p><strong>ITNTI</strong> was started in 2000 by young entrepreneurs simply with their
                             credibility in the
                             market. Today, we are a leader in IT solutions & consulting in the country and have
                             clientele coming in from five continents.</p>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h3>Company</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">About Company</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">Request Quote</a></li>
-                        <li><a href="">Contact us</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <div class="footer-company">
+                        <h3>Company</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="">About Company</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Request Quote</a></li>
+                            <li><a href="">Contact us</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <h3>Services</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">Domain Hosting</a></li>
-                        <li><a href="">Website Design</a></li>
-                        <li><a href="">Web Application</a></li>
-                        <li><a href="">Development</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <div class="footer-service">
+                        <h3>Services</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="">Domain Hosting</a></li>
+                            <li><a href="">Website Design</a></li>
+                            <li><a href="">Web Application</a></li>
+                            <li><a href="">Development</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <h3>Key features</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">SEO</a></li>
-                        <li><a href="">Customer Support</a></li>
-                        <li><a href="">Hack Protection</a></li>
-                        <li><a href="">Self Mangae access</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <div class="footer-feature">
+                        <h3>Key features</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="">SEO</a></li>
+                            <li><a href="">Customer Support</a></li>
+                            <li><a href="">Hack Protection</a></li>
+                            <li><a href="">Self Mangae access</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-6 col-6">
                     <div class="footer-location">
                         <h3>Locations</h3>
                         <p>Ekatabasti Sukedhara,
@@ -600,7 +602,7 @@
             <p class="copyright">&copy; Copyright 2018, ITNTI. All Rights Reserved</p>
         </div>
     </footer>
-
+    <!-- Scripts -->
     <script src="assets/bootstrap/jquery-3.3.1.slim.min.js"></script>
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -649,7 +651,23 @@
             items: 2,
             loop: false,
             nav: true,
-            center: false,
+            center: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            loop: true,
+            margin: 20,
+            responsive: {
+                0: {
+                    items: 1,
+                    center: true
+                },
+                600: {
+                    items: 2,
+                },
+                1000: {
+                    items: 2
+                }
+            }
         });
     </script>
 </body>

@@ -144,6 +144,21 @@ a:focus {
   .navbar-custom ul li a.nav-link {
     font-size: 0.875rem;
     font-weight: 600;
+    transition: color 0.5s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: color(success);
+    }
+  }
+
+  .dropdown-menu.dropdown-custom-lan.show {
+    border: none;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+
+    .dropdown-item {
+      padding: 0.5rem;
+    }
   }
 
   // Hero Section
@@ -641,12 +656,27 @@ a:focus {
   @include section-styles();
 
   .owl-stage-outer {
-    padding: 6rem 0;
+    padding: 2rem 0;
+  }
+
+  .owl-item {
+    .testi-section-item {
+      filter: blur(2px);
+      transition: all 0.5 ease-in-out;
+    }
+  }
+
+  .owl-item.center {
+    .testi-section-item {
+      filter: blur(0);
+      transform: translateY(-30px);
+      background: #ebf5ff;
+    }
   }
 
   .owl-nav {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
     transform: translateY(-50%);
     // width: 100%;
@@ -662,6 +692,17 @@ a:focus {
       border-radius: 50%;
       color: #fff !important;
       box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+      margin: 0 1rem;
+
+      & span {
+        font-size: 1.5rem;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       &.disabled {
         display: none;
@@ -681,12 +722,12 @@ a:focus {
   }
 
   .testi-section-item {
-    background: #f2f2f2;
+    background: #ebf5ff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 5px;
     margin: 0 auto;
-    max-width: 70%;
+    // max-width: 70%;
     position: relative;
     top: 0;
     left: 0;
@@ -803,7 +844,7 @@ a:focus {
 
   h3 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 800 !important;
     text-transform: uppercase;
     margin-bottom: 3rem;
   }
@@ -829,9 +870,10 @@ a:focus {
   }
 
   p.copyright {
+    margin: 2rem 0;
     text-align: center;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     color: color(title-textcolor);
     opacity: 0.5;
     letter-spacing: 0.0125rem;
@@ -839,3 +881,7 @@ a:focus {
 }
 
 /*=====  End of Footer  ======*/
+
+
+/* Imports mixin */
+@import 'responsive';
