@@ -1,0 +1,23 @@
+{
+  "name": "itinti-redesign",
+  "version": "1.0.0",
+  "description": " Itnti Company Website redesign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suprim12/itinti-redesign.git"
+  },
+  "author": "Suprim Golay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suprim12/itinti-redesign/issues"
+  },
+  "homepage": "https://suprim12.github.io/itnti",
+  "dependencies": {
+    "gh-pages": "^2.0.0"
+  }
+}
