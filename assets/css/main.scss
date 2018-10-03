@@ -152,6 +152,10 @@ a:focus {
     }
   }
 
+  .navbar-brand img {
+    height: 36px;
+  }
+
   .dropdown-menu.dropdown-custom-lan.show {
     border: none;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
@@ -612,6 +616,7 @@ a:focus {
       font-size: 0.875rem;
       color: #fff;
       font-weight: 600;
+      white-space: nowrap;
     }
   }
 }

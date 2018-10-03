@@ -108,6 +108,10 @@ a:focus {
   color: #37d592;
 }
 
+#header .navbar-brand img {
+  height: 36px;
+}
+
 #header .dropdown-menu.dropdown-custom-lan.show {
   border: none;
   -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
@@ -600,6 +604,7 @@ a:focus {
   font-size: 0.875rem;
   color: #fff;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 /*=====  End of 3.5 Achive Section  ======*/

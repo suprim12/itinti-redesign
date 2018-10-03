@@ -2,18 +2,21 @@
 <html lang="en">
 
 <head>
+    <title>ITNTI - Digital Company</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- SEO -->
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/logo/fav6.png" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="assets/owl/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <title>ITNTI - Digital Company</title>
+    <link rel="stylesheet" href="assets/sal/sal.css">
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         <!-- Navbar -->
         <nav id="navBar" class="navbar navbar-custom navbar-expand-lg navbar-light bg-transparent">
             <div class="container">
-                <a class="navbar-brand" href="#">ITNTI</a>
+                <a class="navbar-brand" href="#"><img src="assets/img/logo/logo3.svg" alt="logo"></a>
                 <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
                     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -120,10 +123,12 @@
                 <div class="container">
                     <div class="why-section-content">
                         <h3>Why choose ITNTI ?</h3>
-                        <h1>A simple, proven way to boost performance and agility</h1>
+                        <h1 data-sal="slide-left" data-sal-duration="500" data-sal-delay="300" data-sal-easing="ease">A
+                            simple, proven way to boost performance and agility</h1>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" data-sal="slide-up" data-sal-duration="500" data-sal-delay="500"
+                            data-sal-easing="ease">
                             <div class="why-section-item">
                                 <div class="item-header">
                                     <div class="item-info">
@@ -136,7 +141,8 @@
                                 <div class="item-content"></div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" data-sal="slide-up" data-sal-duration="500" data-sal-delay="700"
+                            data-sal-easing="ease">
                             <div class="why-section-item">
                                 <div class="item-header">
                                     <div class="item-info">
@@ -151,7 +157,8 @@
                                 <div class="item-content"></div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" data-sal="slide-up" data-sal-duration="500" data-sal-delay="900"
+                            data-sal-easing="ease">
                             <div class="why-section-item">
                                 <div class="item-header">
                                     <div class="item-info">
@@ -177,7 +184,8 @@
                 <div class="container">
                     <div class="project-section-content">
                         <h3>Our Portfolio</h3>
-                        <h1>We design and Develop that works.</h1>
+                        <h1 data-sal="zoom-in" data-sal-duration="500" data-sal-delay="300" data-sal-easing="ease">We
+                            design and Develop that works.</h1>
                     </div>
                 </div>
                 <!-- project-section-sliders -->
@@ -342,7 +350,8 @@
                 <div class="container">
                     <div class="startegy-section-title">
                         <h3>startegy Company ?</h3>
-                        <h1>Built from the ground up for the mobile generation.</h1>
+                        <h1 data-sal="zoom-in" data-sal-duration="500" data-sal-delay="300" data-sal-easing="ease">Built
+                            from the ground up for the mobile generation.</h1>
                         <p>Company is a digital-first insurer, using technology to make Life Insurance simpler, smarter
                             and
                             more rewarding.</p>
@@ -420,7 +429,8 @@
                 <div class="container">
                     <div class="achive-section-content">
                         <h3>Achivements</h3>
-                        <h1>Our Journey</h1>
+                        <h1 data-sal="zoom-in" data-sal-duration="500" data-sal-delay="300" data-sal-easing="ease">Our
+                            Journey</h1>
                         <p>Founded by serial entrepreneurs, we have been one of the innovation pioneers on many
                             aspects
                             of Software Development, Email Services, Domain Names, Web Hosting, ISP, ASP, Apps,
@@ -519,7 +529,8 @@
         <section id="sectionG" class="call-section">
             <div class="call-section-wrapper">
                 <div class="container">
-                    <div class="call-section-bg">
+                    <div class="call-section-bg" data-sal="zoom-in" data-sal-duration="500" data-sal-delay="300"
+                        data-sal-easing="ease">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="call-section-content">
@@ -609,6 +620,10 @@
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/owl/owl.carousel.min.js"></script>
+    <script src="assets/sal/sal.js"></script>
+    <script>
+        sal();
+    </script>
     <script>
         $('.owl-carousel#owl-one').owlCarousel({
             loop: true,
