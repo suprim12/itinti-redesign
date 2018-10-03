@@ -799,10 +799,9 @@ a:focus {
 
     & p {
       font-size: 0.875rem;
-      font-weight: 500;
+      opacity: 0.8;
+      font-weight: 600;
       text-align: justify;
-      line-height: 1.4;
-      padding-right: 3rem;
       color: #69707a;
 
     }
@@ -811,8 +810,10 @@ a:focus {
   .footer-location {
     p {
       font-size: 0.875rem;
+      opacity: 0.8;
+      font-weight: 600;
+      text-align: justify;
       color: #69707a;
-      margin-bottom: 1rem;
     }
 
     span {
