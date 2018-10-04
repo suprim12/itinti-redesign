@@ -16,39 +16,39 @@
 =            1. Global Styles            =
 =============================================*/
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
-$font: 'Montserrat';
-$bgcolor :#fff;
-$colors: (title-textcolor: #14203c,
-textcolor: #69707a,
-subtitle-textcolor: #9bb0bf,
-herobg: #f2f3f6,
-success: #37d592,
-primary: #05a9f4);
+$font: "Montserrat";
+$bgcolor: #fff;
+$colors: (
+  title-textcolor: #14203c,
+  textcolor: #69707a,
+  subtitle-textcolor: #9bb0bf,
+  herobg: #f2f3f6,
+  success: #37d592,
+  primary: #05a9f4
+);
 
 @function color($colorsname) {
   @return map-get($colors, $colorsname);
 }
-
 @function set-text-color($bgcolor) {
-  @if (lightness($bgcolor)>40) {
+  @if (lightness($bgcolor) >40) {
     @return #000;
-  }
-
-  @else {
+  } @else {
     @return #fff;
   }
 }
-
+@mixin easeOut {
+  transition: all 0.5s ease-in-out;
+}
 @mixin section-styles {
   display: block;
   width: 100%;
   padding: 8rem 0;
 }
-
 @mixin section-content-styles {
   h3 {
     font-size: 0.875rem;
@@ -56,7 +56,6 @@ primary: #05a9f4);
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-
   h1 {
     font-size: 2.375rem;
     font-weight: 700;
@@ -65,18 +64,15 @@ primary: #05a9f4);
     color: color(title-textcolor);
   }
 }
-
 body,
 html {
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
-
 * {
   font-family: $font;
 }
-
 *,
 *::before,
 *::after {
@@ -84,17 +80,14 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-
 img {
   max-width: 100%;
 }
-
 a,
 a:hover,
 a:focus {
   text-decoration: none;
 }
-
 // Buttons
 .btn-custom-success {
   padding: 0.75rem 1.875rem;
@@ -103,7 +96,6 @@ a:focus {
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: opacity 0.5 ease-in-out;
-
   &:hover {
     opacity: 0.8;
     color: #fff;
@@ -111,7 +103,6 @@ a:focus {
     cursor: pointer;
   }
 }
-
 .btn-custom-primary {
   padding: 0.75rem 1.875rem;
   background: color(primary);
@@ -119,7 +110,6 @@ a:focus {
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: opacity 0.5 ease-in-out;
-
   &:hover {
     opacity: 0.8;
     color: #fff;
@@ -127,9 +117,25 @@ a:focus {
     cursor: pointer;
   }
 }
-
-
-
+.fixed-nav {
+  @include easeOut();
+  #navBar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; // background: #fff !important; // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid #e4e7ee;
+    padding: 0.8rem 1rem;
+    backdrop-filter: saturate(180%) blur(10px);
+    @include easeOut();
+  }
+}
+.br-none {
+  border-right: none !important;
+}
 /* =====  End of 1. Global Styles  ====== */
 /* =============================================
 =            2. Header Styles            =
@@ -140,54 +146,59 @@ a:focus {
   width: 100%;
   height: 100vh;
   background-color: color(herobg); // Navbar Section
-
   .navbar-custom ul li a.nav-link {
     font-size: 0.875rem;
     font-weight: 600;
     transition: color 0.5s ease-in-out;
-
     &:hover,
     &:focus {
       color: color(success);
     }
   }
-
   .navbar-brand img {
     height: 36px;
   }
-
   .dropdown-menu.dropdown-custom-lan.show {
     border: none;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-
     .dropdown-item {
       padding: 0.5rem;
     }
   }
-
   // Hero Section
   .hero-section {
     display: block;
     margin-top: 5rem;
-
     .hero-section-content {
+      overflow: hidden;
       h1 {
-        font-size: 1.5rem;
-        font-weight: 800;
-        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: bolder;
         line-height: 1.4;
         color: color(title-textcolor);
       }
-
       p {
         font-size: 1rem;
         font-weight: 600;
-        margin-bottom: 2rem;
+        opacity: 0.5;
+        letter-spacing: 0.1rem;
+        margin-bottom: 5rem;
       }
     }
   }
 }
-
+g#cloud {
+  transform: translateX(0px);
+  animation: leftright 500s linear infinite;
+}
+@keyframes leftright {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
 /* =====  End of 2. Header Styles  ====== */
 /* =============================================
 =            3.1 Worked Section            =
@@ -197,7 +208,7 @@ a:focus {
   padding: 1.8rem 0;
   background: #fff;
   border-bottom: 1px solid rgba(221, 221, 221, 0.5);
-
+  position: relative;
   & p {
     text-align: center;
     font-weight: 600;
@@ -206,20 +217,18 @@ a:focus {
     text-transform: uppercase;
     color: #ddd;
   }
-
   &::after {
     position: absolute;
-    bottom: 0;
+    top: -40px;
     left: 0;
+    right: 0;
     width: 100%;
-    height: 100px;
-    background-image: url("../img/curved.svg");
-    background-position: bottom center;
+    height: 40px;
+    background-image: url(../img/curved.svg);
     background-size: cover;
     content: "";
     z-index: 5;
   }
-
   & a img {
     // Overrrides Owl Class
     width: 50% !important;
@@ -229,33 +238,27 @@ a:focus {
     filter: grayscale(0.8);
   }
 }
-
 /* =====  End of 3.1 Worked Section  ====== */
 /* =============================================
 =            3.2 Why Sections            =
 ============================================= */
 .why-section {
   @include section-styles();
-
   .why-section-content {
     text-align: center;
     max-width: 65%;
     margin: auto;
     @include section-content-styles();
-
   }
-
   .why-section-item {
     .item-info {
       margin-top: 4rem;
       display: flex;
       align-items: center;
-
       & i {
         color: color(success);
         font-size: 2rem;
       }
-
       & span {
         margin-left: 2rem;
         font-size: 1.2rem;
@@ -263,31 +266,25 @@ a:focus {
         text-transform: capitalize;
       }
     }
-
     & p {
       font-size: 1rem;
       margin-top: 2rem;
     }
   }
-
   .why-section-link {
     margin-top: 5rem;
   }
-
   & hr {
-    margin-top: 5rem
+    margin-top: 5rem;
   }
 }
-
 /* =====  End of 3.2 Why Sections  ====== */
-
-/*=============================================
+/* =============================================
 =            3.3 Project Section            =
-=============================================*/
+============================================= */
 .project-section {
   background: color(herobg);
   @include section-styles();
-
   .project-section-content {
     margin-bottom: 3rem;
     text-align: center;
@@ -296,39 +293,32 @@ a:focus {
     margin-bottom: 2rem;
     @include section-content-styles();
   }
-
   .project-section-link {
     margin-top: 5rem;
   }
-
   .owl-stage-outer {
     padding: 2rem 0;
   }
-
   .owl-item.active.center {
     .project-section-item-wrapp {
       .front {
         &::after {
           visibility: hidden;
         }
-
         & .inner {
           visibility: hidden;
         }
       }
-
       &:hover .back {
         -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
         -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
-
         & a {
           opacity: 1;
           left: 0;
         }
       }
-
       &:hover .front {
         -webkit-transform: rotateY(-180deg);
         transform: rotateY(-180deg);
@@ -337,18 +327,17 @@ a:focus {
       }
     }
   }
-
   .project-section-item-wrapp {
     transform-style: preserve-3d;
     perspective: 1000px;
-
     .front,
     .back {
       background-size: cover;
       background-position: center;
-      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1),
+        -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
       backface-visibility: hidden;
       text-align: center;
       min-height: 380px;
@@ -357,7 +346,6 @@ a:focus {
       color: #fff;
       font-size: 1.5rem;
     }
-
     .back {
       position: absolute;
       top: 0;
@@ -365,7 +353,6 @@ a:focus {
       width: 100%;
       background: rgb(206, 220, 231);
       // background: #14203c;
-
       & .inner {
         & p {
           font-size: 1rem;
@@ -373,7 +360,6 @@ a:focus {
           text-align: left;
           opacity: 0.8;
         }
-
         & a {
           font-size: 0.875rem;
           font-weight: 600;
@@ -385,7 +371,6 @@ a:focus {
           left: -100%;
           transition: all 0.5s linear;
         }
-
         & img {
           width: 50%;
           object-fit: contain;
@@ -395,7 +380,6 @@ a:focus {
         }
       }
     }
-
     .inner {
       transform: translateY(-50%) translateZ(60px);
       top: 50%;
@@ -406,13 +390,11 @@ a:focus {
       perspective: inherit;
       z-index: 2;
     }
-
     & .front {
       -webkit-transform: rotateY(0deg);
       transform: rotateY(0deg);
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
-
       &:after {
         position: absolute;
         top: 0;
@@ -420,22 +402,20 @@ a:focus {
         z-index: 1;
         width: 100%;
         height: 100%;
-        content: '';
+        content: "";
         display: block;
-        opacity: .5;
+        opacity: 0.5;
         background-color: #000;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 10px;
       }
-
       .front-img {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-
         & img {
           width: 100%;
           height: 100%;
@@ -444,7 +424,6 @@ a:focus {
           border-radius: 5px;
         }
       }
-
       & .inner p {
         color: #fff;
         opacity: 0.8;
@@ -453,9 +432,8 @@ a:focus {
         margin-bottom: 2rem;
         position: relative;
       }
-
       & .inner p:after {
-        content: '';
+        content: "";
         width: 4rem;
         height: 1px;
         position: absolute;
@@ -464,53 +442,43 @@ a:focus {
         left: 0;
         right: 0;
         margin: 0 auto;
-        bottom: -.75rem;
+        bottom: -0.75rem;
       }
-
       & .inner span {
         font-size: 0.875rem;
         color: rgba(255, 255, 255, 0.7);
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 300;
       }
     }
-
     & .back {
       transform: rotateY(180deg);
       transform-style: preserve-3d;
     }
-
     // &:hover .back {
-    //   -webkit-transform: rotateY(0deg);
-    //   transform: rotateY(0deg);
-    //   -webkit-transform-style: preserve-3d;
-    //   transform-style: preserve-3d;
-
-    //   & a {
-    //     opacity: 1;
-    //     left: 0;
-    //   }
+    // -webkit-transform: rotateY(0deg);
+    // transform: rotateY(0deg);
+    // -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    // & a {
+    // opacity: 1;
+    // left: 0;
     // }
-
+    // }
     // &:hover .front {
-    //   -webkit-transform: rotateY(-180deg);
-    //   transform: rotateY(-180deg);
-    //   -webkit-transform-style: preserve-3d;
-    //   transform-style: preserve-3d;
+    // -webkit-transform: rotateY(-180deg);
+    // transform: rotateY(-180deg);
+    // -webkit-transform-style: preserve-3d;
+    // transform-style: preserve-3d;
     // }
   }
-
 }
-
-/*=====  End of 3.3 project Section  ======*/
-
-/*=============================================
+/* =====  End of 3.3 project Section  ====== */
+/* =============================================
 =            3.5 startegy Section            =
-=============================================*/
+============================================= */
 .startegy-section {
-  @include section-styles();
-  // background: color(herobg);
-
+  @include section-styles(); // background: color(herobg);
   .startegy-section-title {
     max-width: 60%;
     margin: auto;
@@ -518,24 +486,19 @@ a:focus {
     text-align: center;
     @include section-content-styles();
   }
-
   .startegy-section-item {
     margin-top: 5rem;
-
     & i {
       color: color(success);
       font-size: 2rem;
     }
-
     .startegy-section-item-content {
       padding: 1.2rem;
-
       & h2 {
         font-size: 1.2rem;
         font-weight: 600;
         color: set-text-color($bgcolor);
       }
-
       & p {
         font-size: 1rem;
         word-break: break-all;
@@ -545,42 +508,34 @@ a:focus {
     }
   }
 }
-
 .brb {
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-
 .bb {
   border-bottom: 1px solid #ccc;
 }
-
 .br {
   border-right: 1px solid #ccc;
 }
-
-/*=====  End of 3.4 startegy Section  ======*/
-
-/*=============================================
+/* =====  End of 3.4 startegy Section  ====== */
+/* =============================================
 =            3.5 Achive Section            =
-=============================================*/
+============================================= */
 .achive-section {
   @include section-styles();
-  background: linear-gradient(to right, #934BFF, #934BFF);
-
+  background: linear-gradient(to right, #934bff, #934bff);
   .achive-section-content {
     max-width: 70%;
     margin: auto;
     text-align: center;
     margin-bottom: 3rem;
-
     h3 {
       font-size: 0.875rem;
       color: #fff;
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
-
     h1 {
       font-size: 2.375rem;
       font-weight: 700;
@@ -588,30 +543,24 @@ a:focus {
       margin-bottom: 1rem;
       color: #fff;
     }
-
     p {
       font-size: 1rem;
       font-weight: 500;
       color: #fff;
     }
-
   }
-
   .achive-section-item {
     padding: 0 2rem;
     border-right: 1px dotted color(success);
-
     &.no-b-r {
       border-right: none;
     }
-
     & span {
       color: color(success);
       font-weight: 600;
       font-size: 2rem;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-
     & h3 {
       font-size: 0.875rem;
       color: #fff;
@@ -620,29 +569,23 @@ a:focus {
     }
   }
 }
-
-/*=====  End of 3.5 Achive Section  ======*/
-
-/*=============================================
+/* =====  End of 3.5 Achive Section  ====== */
+/* =============================================
 =            3.6 Call Section            =
-=============================================*/
+============================================= */
 .call-section {
   padding: 4rem 0;
-
   .call-section-bg {
     padding: 3rem;
     border-radius: 5px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(21deg, #17B1F4 0%, #3FC2F2 100%);
-
+    background-image: linear-gradient(21deg, #17b1f4 0%, #3fc2f2 100%);
     .call-section-content {
       color: #fff;
-
       & h1 {
         font-size: 2rem;
         font-weight: 600;
       }
-
       & p {
         opacity: 0.8;
         font-size: 500;
@@ -650,27 +593,21 @@ a:focus {
     }
   }
 }
-
-
-/*=====  End of 3.6 Call Section  ======*/
-
-/*=============================================
+/* =====  End of 3.6 Call Section  ====== */
+/* =============================================
 =            3.7 Testimonial Section            =
-=============================================*/
+============================================= */
 .testi-section {
   @include section-styles();
-
   .owl-stage-outer {
     padding: 2rem 0;
   }
-
   .owl-item {
     .testi-section-item {
       filter: blur(2px);
       transition: all 0.5 ease-in-out;
     }
   }
-
   .owl-item.center {
     .testi-section-item {
       filter: blur(0);
@@ -678,16 +615,13 @@ a:focus {
       background: #ebf5ff;
     }
   }
-
   .owl-nav {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(-50%);
-    // width: 100%;
+    transform: translateY(-50%); // width: 100%;
     display: flex;
     justify-content: space-between;
-
     & button {
       position: relative;
       z-index: 1;
@@ -698,7 +632,6 @@ a:focus {
       color: #fff !important;
       box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
       margin: 0 1rem;
-
       & span {
         font-size: 1.5rem;
         width: 100%;
@@ -708,24 +641,19 @@ a:focus {
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
       &.disabled {
         display: none;
       }
-
       &:hover,
       &:focus {
         outline: none;
       }
     }
-
   }
-
   .testi-section-content {
     max-width: 50%;
     @include section-content-styles();
   }
-
   .testi-section-item {
     background: #ebf5ff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -739,15 +667,12 @@ a:focus {
     right: 0;
     bottom: 0;
     width: 100%;
-
     .testi-section-item-content {
-
       & span.quote {
         font-size: 2rem;
         font-weight: 600;
         color: #ddd;
       }
-
       & p {
         font-size: 1rem;
         text-align: left;
@@ -757,16 +682,12 @@ a:focus {
         opacity: 0.5;
         font-style: italic;
       }
-
-
     }
-
     .testi-author-info {
       & span i {
         color: gold;
         font-size: 0.75rem;
       }
-
       & p {
         font-size: 0.875rem;
         font-weight: 600;
@@ -774,7 +695,6 @@ a:focus {
         margin: 0;
         padding: 0;
       }
-
       & span {
         font-size: 0.875rem;
         color: color(success);
@@ -784,34 +704,26 @@ a:focus {
     }
   }
 }
-
-
-/*=====  End of 3.7 Testimonial Section  ======*/
-
-/*=============================================
+/* =====  End of 3.7 Testimonial Section  ====== */
+/* =============================================
 =            Footer            =
-=============================================*/
+============================================= */
 .footer-section {
   padding: 4rem 0;
-
   .footer-about {
-
     & img {
       width: 60%;
       object-fit: contain;
       margin-bottom: 2rem;
     }
-
     & p {
       font-size: 0.875rem;
       opacity: 0.8;
       font-weight: 600;
       text-align: justify;
       color: #69707a;
-
     }
   }
-
   .footer-location {
     p {
       font-size: 0.875rem;
@@ -820,61 +732,49 @@ a:focus {
       text-align: justify;
       color: #69707a;
     }
-
     span {
       color: #69707a;
       font-size: 0.875rem;
       font-weight: 600;
       padding: 0.75rem 0;
-
       &.mail {
         color: color(success);
-
         & i {
           margin-right: 1rem;
         }
       }
-
       &.phone {
         & i {
           color: color(success);
           margin-right: 1rem;
         }
       }
-
       &:first-child {
         color: color(success);
       }
     }
   }
-
   h3 {
     font-size: 1rem;
     font-weight: 800 !important;
     text-transform: uppercase;
     margin-bottom: 3rem;
   }
-
-
   ul li {
     margin-bottom: 0.875rem;
-    transition: all .5s ease-in-out;
-
+    transition: all 0.5s ease-in-out;
     & a {
       font-size: 0.875rem;
       font-weight: 600;
       color: #69707a;
     }
-
     &:hover {
       transform: translateX(10px);
-
       & a {
         color: color(success);
       }
     }
   }
-
   p.copyright {
     margin: 2rem 0;
     text-align: center;
@@ -885,9 +785,6 @@ a:focus {
     letter-spacing: 0.0125rem;
   }
 }
-
-/*=====  End of Footer  ======*/
-
-
+/* =====  End of Footer  ====== */
 /* Imports mixin */
-@import 'responsive';
+@import "responsive";
