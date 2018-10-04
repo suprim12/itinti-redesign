@@ -15,7 +15,7 @@
 =            1. Global Styles            =
 =============================================*/
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
@@ -85,6 +85,31 @@ a:focus {
   cursor: pointer;
 }
 
+.fixed-nav {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.fixed-nav #navBar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid #e4e7ee;
+  padding: 0.8rem 1rem;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.br-none {
+  border-right: none !important;
+}
+
 /* =====  End of 1. Global Styles  ====== */
 /* =============================================
 =            2. Header Styles            =
@@ -127,10 +152,13 @@ a:focus {
   margin-top: 5rem;
 }
 
+#header .hero-section .hero-section-content {
+  overflow: hidden;
+}
+
 #header .hero-section .hero-section-content h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bolder;
   line-height: 1.4;
   color: #14203c;
 }
@@ -138,7 +166,38 @@ a:focus {
 #header .hero-section .hero-section-content p {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  opacity: 0.5;
+  letter-spacing: 0.1rem;
+  margin-bottom: 5rem;
+}
+
+g#cloud {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-animation: leftright 500s linear infinite;
+          animation: leftright 500s linear infinite;
+}
+
+@-webkit-keyframes leftright {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+}
+
+@keyframes leftright {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
 }
 
 /* =====  End of 2. Header Styles  ====== */
@@ -150,6 +209,7 @@ a:focus {
   padding: 1.8rem 0;
   background: #fff;
   border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+  position: relative;
 }
 
 .worked-section p {
@@ -163,12 +223,12 @@ a:focus {
 
 .worked-section::after {
   position: absolute;
-  bottom: 0;
+  top: -40px;
   left: 0;
+  right: 0;
   width: 100%;
-  height: 100px;
-  background-image: url("../img/curved.svg");
-  background-position: bottom center;
+  height: 40px;
+  background-image: url(../img/curved.svg);
   background-size: cover;
   content: "";
   z-index: 5;
@@ -251,9 +311,9 @@ a:focus {
 }
 
 /* =====  End of 3.2 Why Sections  ====== */
-/*=============================================
+/* =============================================
 =            3.3 Project Section            =
-=============================================*/
+============================================= */
 .project-section {
   background: #f2f3f6;
   display: block;
@@ -324,6 +384,7 @@ a:focus {
           transform-style: preserve-3d;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .project-section .project-section-item-wrapp .front,
@@ -410,9 +471,9 @@ a:focus {
   z-index: 1;
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   display: block;
-  opacity: .5;
+  opacity: 0.5;
   background-color: #000;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -447,7 +508,7 @@ a:focus {
 }
 
 .project-section .project-section-item-wrapp .front .inner p:after {
-  content: '';
+  content: "";
   width: 4rem;
   height: 1px;
   position: absolute;
@@ -456,13 +517,13 @@ a:focus {
   left: 0;
   right: 0;
   margin: 0 auto;
-  bottom: -.75rem;
+  bottom: -0.75rem;
 }
 
 .project-section .project-section-item-wrapp .front .inner span {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: 300;
 }
 
@@ -473,10 +534,10 @@ a:focus {
           transform-style: preserve-3d;
 }
 
-/*=====  End of 3.3 project Section  ======*/
-/*=============================================
+/* =====  End of 3.3 project Section  ====== */
+/* =============================================
 =            3.5 startegy Section            =
-=============================================*/
+============================================= */
 .startegy-section {
   display: block;
   width: 100%;
@@ -544,16 +605,16 @@ a:focus {
   border-right: 1px solid #ccc;
 }
 
-/*=====  End of 3.4 startegy Section  ======*/
-/*=============================================
+/* =====  End of 3.4 startegy Section  ====== */
+/* =============================================
 =            3.5 Achive Section            =
-=============================================*/
+============================================= */
 .achive-section {
   display: block;
   width: 100%;
   padding: 8rem 0;
-  background: -webkit-gradient(linear, left top, right top, from(#934BFF), to(#934BFF));
-  background: linear-gradient(to right, #934BFF, #934BFF);
+  background: -webkit-gradient(linear, left top, right top, from(#934bff), to(#934bff));
+  background: linear-gradient(to right, #934bff, #934bff);
 }
 
 .achive-section .achive-section-content {
@@ -607,10 +668,10 @@ a:focus {
   white-space: nowrap;
 }
 
-/*=====  End of 3.5 Achive Section  ======*/
-/*=============================================
+/* =====  End of 3.5 Achive Section  ====== */
+/* =============================================
 =            3.6 Call Section            =
-=============================================*/
+============================================= */
 .call-section {
   padding: 4rem 0;
 }
@@ -620,7 +681,7 @@ a:focus {
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(21deg, #17B1F4 0%, #3FC2F2 100%);
+  background-image: linear-gradient(21deg, #17b1f4 0%, #3fc2f2 100%);
 }
 
 .call-section .call-section-bg .call-section-content {
@@ -637,10 +698,10 @@ a:focus {
   font-size: 500;
 }
 
-/*=====  End of 3.6 Call Section  ======*/
-/*=============================================
+/* =====  End of 3.6 Call Section  ====== */
+/* =============================================
 =            3.7 Testimonial Section            =
-=============================================*/
+============================================= */
 .testi-section {
   display: block;
   width: 100%;
@@ -782,10 +843,10 @@ a:focus {
   font-weight: 600;
 }
 
-/*=====  End of 3.7 Testimonial Section  ======*/
-/*=============================================
+/* =====  End of 3.7 Testimonial Section  ====== */
+/* =============================================
 =            Footer            =
-=============================================*/
+============================================= */
 .footer-section {
   padding: 4rem 0;
 }
@@ -846,8 +907,8 @@ a:focus {
 
 .footer-section ul li {
   margin-bottom: 0.875rem;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .footer-section ul li a {
@@ -875,7 +936,7 @@ a:focus {
   letter-spacing: 0.0125rem;
 }
 
-/*=====  End of Footer  ======*/
+/* =====  End of Footer  ====== */
 /* Imports mixin */
 /*desktops - higher resolution*/
 /*laptops, desktops*/

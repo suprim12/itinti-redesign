@@ -24,9 +24,6 @@ function fadeIn(el, display) {
     })();
 };
 
-
-
-
 function fixnav() {
     let nav = document.querySelector('.navbar-custom');
     let topnav = nav.offsetTop;
